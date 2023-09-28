@@ -16,6 +16,7 @@ export default function Home() {
         onUpload={(result: any) => {
           console.log(result.info.public_id);
           setImageId(result.info.public_id);
+          console.log(result);
         }}
         uploadPreset="i8zowa5f"
       />
