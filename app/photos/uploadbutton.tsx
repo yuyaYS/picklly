@@ -1,6 +1,7 @@
 "use client";
 import { CldUploadButton, CldImage } from "next-cloudinary";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 type UploadResult = {
   info: {
@@ -15,6 +16,7 @@ type Wiget = {
 };
 
 export default function UploadButton() {
+  const router = useRouter();
   return (
     <Button asChild>
       <CldUploadButton
@@ -22,6 +24,7 @@ export default function UploadButton() {
           console.log(result);
           console.log(wiget);
           wiget.close();
+          router.refresh();
         }}
         uploadPreset="i8zowa5f"
       />
